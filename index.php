@@ -46,7 +46,7 @@
 
 <div style="display:inline-block; vertical-align:top;">
 <form>
-<input type="text" name="webrepl_url" id="url" value="ws://192.168.4.1:8266/" />
+<input type="text" name="webrepl_url" id="url" value="ws://<?= (!empty($_REQUEST['ip']) && !filter_var($_REQUEST['ip'], FILTER_VALIDATE_IP) === false) ? $_REQUEST['ip'] : '192.168.4.1' ?>:8266/" />
 <input type="submit" id="button" value="Connect" onclick="button_click(); return false;" />
 </form>
 <div id="term">
